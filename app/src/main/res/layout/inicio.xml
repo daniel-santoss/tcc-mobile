@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A1A">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="351dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="52dp"
+        android:width="200px"
+        android:gravity="center"
+        android:text="Não possui conta? Cadastre-se no nosso site!"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_inicio" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="261dp"
+        android:layout_height="219dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="371dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="28dp"
+        android:width="200px"
+        android:gravity="center"
+        android:text="Bem-Vindo ao INK Studio Tattoo "
+        android:textColor="#FFFFFF"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="354dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:width="200px"
+        android:gravity="center"
+        android:text="Melhor aplicativo de tatuagem do Brasil!"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <Button
+        android:id="@+id/btn_inicio"
+        android:layout_width="285dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#FFF"
+        android:text="Entrar"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

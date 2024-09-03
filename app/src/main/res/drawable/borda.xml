@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <solid android:color="@android:color/transparent"/> <!-- Cor de fundo transparente -->
+        <stroke android:width="2dp" android:color="#FFFFFF"/> <!-- Largura e cor da borda -->
+        <corners android:radius="4dp"/> <!-- Raio dos cantos -->
+        <padding android:left="8dp" android:top="8dp" android:right="8dp" android:bottom="8dp"/> <!-- Padding interno -->
+    </shape>
+
+
+</selector>
