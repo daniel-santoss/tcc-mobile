@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/btnEntrar"
             android:layout_width="match_parent"
             android:layout_height="72dp"
             android:layout_marginTop="156dp"
@@ -27,12 +27,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned2"
+            app:layout_constraintTop_toBottomOf="@+id/edSenha"
             app:layout_constraintWidth_percent="0.6"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/msg_btn_login"
             android:layout_width="match_parent"
             android:layout_height="27dp"
             android:layout_marginTop="16dp"
@@ -78,7 +78,7 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextNumberSigned2"
+            android:id="@+id/edSenha"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="44dp"
@@ -93,7 +93,7 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextNumberSigned"
+            android:id="@+id/edLogin"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="24dp"
@@ -104,7 +104,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/msg_btn_login"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -117,7 +117,7 @@
             android:text="Acesse nosso site caso não tenha conta ou tenha esquecido sua senha."
             android:textColor="#BACAE2"
             android:textSize="28sp"
-            app:layout_constraintBottom_toTopOf="@+id/loginButton"
+            app:layout_constraintBottom_toTopOf="@+id/btnEntrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +134,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned"
+            app:layout_constraintTop_toBottomOf="@+id/edLogin"
             tools:ignore="MissingConstraints" />
 
         <ImageView

@@ -11,6 +11,9 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="msg_erro_campo_vazio">Preenchiemento obrigatório</string>
+    <string name="msg_form_invalido">Por favor, preencha todos os campos</string>
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
