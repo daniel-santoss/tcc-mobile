@@ -5,9 +5,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.RetrofitClient;
+import com.example.api.UsuarioService;
+import com.example.model.Usuario;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +29,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        TextView titulo = findViewById(R.id.titulo_ink);
+        UsuarioService service = RetrofitClient.obterUsuarioService();
+        Call<Usuario> requisicao = service.getUsuario(1l);
 
-        edLogin = (EditText) findViewById(R.id.edLogin);
+        requisicao.enqueue(
+                new Callback<Usuario>() {
+                    @Override
+                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                        Usuario usuario = response.body();
+                        titulo.setText(usuario.getNome());
+                    }
+
+                    @Override
+                    public void onFailure(Call<Usuario> call, Throwable t) {
+                        System.out.println(t);
+                    }
+                });
+
+
+                edLogin = (EditText) findViewById(R.id.edLogin);
         edSenha = (EditText) findViewById(R.id.edSenha);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
 

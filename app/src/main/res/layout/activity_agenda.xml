@@ -41,15 +41,13 @@
         app:layout_constraintHorizontal_bias="0.677"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="197dp"
-        tools:text="18/06/2024" />
+        tools:layout_editor_absoluteY="197dp" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="113dp"
         android:layout_height="42dp"
         android:gravity="center"
-        android:text="13:00"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.677"
@@ -102,7 +100,6 @@
         android:layout_width="113dp"
         android:layout_height="42dp"
         android:gravity="center"
-        android:text="José Kinovic"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.677"
@@ -115,7 +112,6 @@
         android:layout_width="113dp"
         android:layout_height="42dp"
         android:gravity="center"
-        android:text="Tatuagem"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.677"
