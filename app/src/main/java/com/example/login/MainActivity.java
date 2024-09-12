@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Usuario> call, Throwable t) {
+                        System.out.println("erro");
                         System.out.println(t);
                     }
                 });
