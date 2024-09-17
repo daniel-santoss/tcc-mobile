@@ -85,7 +85,6 @@
             android:background="#FFFFFF"
             android:contentDescription="Insira seu CPF"
             android:ems="10"
-            android:inputType="numberSigned"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

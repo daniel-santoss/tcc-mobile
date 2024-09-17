@@ -1,7 +1,10 @@
 package com.example.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,8 +40,16 @@ public class MainActivity extends AppCompatActivity {
                 new Callback<Usuario>() {
                     @Override
                     public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                        Usuario usuario = response.body();
-                        titulo.setText(usuario.getNome());
+                        try {
+                            Usuario usuario = response.body();
+                            Log.d("requisicao", usuario.getNome());
+                            System.out.println(usuario.getNome());
+                            titulo.setText(usuario.getNome());
+                        }
+                        catch (Exception e) {
+                            System.out.println(e);
+                        }
+
                     }
 
                     @Override
@@ -75,8 +86,30 @@ public class MainActivity extends AppCompatActivity {
 
                 // Se tudo estiver válido
                 if (isValido) {
-                    Intent intent = new Intent(MainActivity.this, agenda.class);
-                    startActivity(intent);
+                    Call<Usuario> requisicao = service.login(edLogin.getText().toString(), edSenha.getText().toString());
+                    requisicao.enqueue(new Callback<Usuario>() {
+                        @Override
+                        public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                            Usuario usuario = response.body();
+
+                            System.out.println(usuario);
+                            SharedPreferences sharedPreferences = getSharedPreferences("dados", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("email", edLogin.getText().toString());
+
+                            editor.apply();
+                            Intent intent = new Intent(MainActivity.this, agenda.class);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onFailure(Call<Usuario> call, Throwable t) {
+                            System.out.println(t);
+                        }
+                    });
+
+                    //Intent intent = new Intent(MainActivity.this, agenda.class);
+                    //startActivity(intent);
                 } else {
                     // Exibe a mensagem de erro caso não seja válido
                     Toast.makeText(MainActivity.this, getString(R.string.msg_form_invalido), Toast.LENGTH_LONG).show();
