@@ -32,7 +32,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/msg_btn_login"
+            android:id="@+id/viewProfissional"
             android:layout_width="match_parent"
             android:layout_height="27dp"
             android:layout_marginTop="44dp"
@@ -88,7 +88,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/msg_btn_login"
+            app:layout_constraintTop_toBottomOf="@+id/viewProfissional"
             tools:ignore="MissingConstraints" />
 
         <TextView

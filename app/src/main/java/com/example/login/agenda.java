@@ -8,13 +8,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class agenda extends AppCompatActivity {
+
+    private EditText viewBemVindo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agenda);
+
+
         Button voltar_login = findViewById(R.id.voltarAgenda);
         SharedPreferences sharedPreferences = getSharedPreferences("dados", Context.MODE_PRIVATE);
         String email = sharedPreferences.getString("email","email não identificado");
@@ -26,5 +32,7 @@ public class agenda extends AppCompatActivity {
                 startActivity (intent);
             }
         });
+        
+
     }
 }
