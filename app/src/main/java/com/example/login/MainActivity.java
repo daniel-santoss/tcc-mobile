@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         UsuarioService service = RetrofitClient.obterUsuarioService();
         Call<Usuario> requisicao = service.getUsuario(1l);
 
-        requisicao.enqueue(
+        /*requisicao.enqueue(
                 new Callback<Usuario>() {
                     @Override
                     public void onResponse(Call<Usuario> call, Response<Usuario> response) {
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("erro");
                         System.out.println(t);
                     }
-                });
+                });*/
 
 
                 edLogin = (EditText) findViewById(R.id.edLogin);
