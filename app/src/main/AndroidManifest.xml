@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
-            android:name=".inicio"
+            android:name=".Inicio"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
         </intent-filter>
     </activity>
         <activity
-            android:name=".agenda"
+            android:name=".Agenda"
             android:exported="false"
             android:label="@string/title_activity_agenda"
             android:theme="@style/Theme.Login" />

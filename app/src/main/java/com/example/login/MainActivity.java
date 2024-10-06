@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.RetrofitClient;
+import com.example.api.RetrofitClient;
 import com.example.api.UsuarioService;
 import com.example.model.Usuario;
 
@@ -98,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                             editor.putString("email", edLogin.getText().toString());
 
                             editor.apply();
-                            Intent intent = new Intent(MainActivity.this, agenda.class);
+                            Intent intent = new Intent(MainActivity.this, Agenda.class);
                             startActivity(intent);
                         }
 
