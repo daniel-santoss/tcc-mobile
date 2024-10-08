@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         UsuarioService service = RetrofitClient.obterUsuarioService();
         Call<Usuario> requisicao = service.getUsuario(1l);
 
-        /*requisicao.enqueue(
+        requisicao.enqueue(
                 new Callback<Usuario>() {
                     @Override
                     public void onResponse(Call<Usuario> call, Response<Usuario> response) {
@@ -56,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("erro");
                         System.out.println(t);
                     }
-                });*/
+                });
 
 
-                edLogin = (EditText) findViewById(R.id.edLogin);
+        edLogin = (EditText) findViewById(R.id.edLogin);
         edSenha = (EditText) findViewById(R.id.edSenha);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
 
@@ -107,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-                    //Intent intent = new Intent(MainActivity.this, agenda.class);
-                    //startActivity(intent);
+                    Intent intent = new Intent(MainActivity.this, Agenda.class);
+                    startActivity(intent);
                 } else {
                     // Exibe a mensagem de erro caso não seja válido
                     Toast.makeText(MainActivity.this, getString(R.string.msg_form_invalido), Toast.LENGTH_LONG).show();
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        };
-    }
+    };
+}
 
 

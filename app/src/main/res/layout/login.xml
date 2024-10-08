@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="27dp"
             android:layout_marginTop="44dp"
-            android:text="Digite seu CPF:"
+            android:text="Digite seu Email:"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
