@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,29 +34,6 @@ public class MainActivity extends AppCompatActivity {
         TextView titulo = findViewById(R.id.titulo_ink);
         UsuarioService service = RetrofitClient.obterUsuarioService();
         Call<Usuario> requisicao = service.getUsuario(1l);
-
-        requisicao.enqueue(
-                new Callback<Usuario>() {
-                    @Override
-                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                        try {
-                            Usuario usuario = response.body();
-                            Log.d("requisicao", usuario.getNome());
-                            System.out.println(usuario.getNome());
-                            titulo.setText(usuario.getNome());
-                        }
-                        catch (Exception e) {
-                            System.out.println(e);
-                        }
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<Usuario> call, Throwable t) {
-                        System.out.println("erro");
-                        System.out.println(t);
-                    }
-                });
 
 
         edLogin = (EditText) findViewById(R.id.edLogin);
@@ -93,23 +69,26 @@ public class MainActivity extends AppCompatActivity {
                             Usuario usuario = response.body();
 
                             System.out.println(usuario);
-                            SharedPreferences sharedPreferences = getSharedPreferences("dados", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("email", edLogin.getText().toString());
 
-                            editor.apply();
-                            Intent intent = new Intent(MainActivity.this, Agenda.class);
-                            startActivity(intent);
+                                System.out.println(usuario);
+                                SharedPreferences sharedPreferences = getSharedPreferences("dados", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("email", edLogin.getText().toString());
+
+                                editor.apply();
+                                Intent intent = new Intent(MainActivity.this, Agenda.class);
+                                startActivity(intent);
+
                         }
 
                         @Override
                         public void onFailure(Call<Usuario> call, Throwable t) {
                             System.out.println(t);
+                            Toast toast =  Toast.makeText(getApplicationContext(),"Usuario não encontrado", Toast.LENGTH_LONG);
+                            toast.show();
                         }
                     });
 
-                    Intent intent = new Intent(MainActivity.this, Agenda.class);
-                    startActivity(intent);
                 } else {
                     // Exibe a mensagem de erro caso não seja válido
                     Toast.makeText(MainActivity.this, getString(R.string.msg_form_invalido), Toast.LENGTH_LONG).show();

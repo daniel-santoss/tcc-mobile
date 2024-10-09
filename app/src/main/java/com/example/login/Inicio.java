@@ -1,6 +1,8 @@
 package com.example.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +22,13 @@ public class Inicio extends AppCompatActivity {
         ImageButton buttonInsta = findViewById(R.id.imageInsta);
         Button inicioButton = findViewById(R.id.btn_inicio);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("dados", Context.MODE_PRIVATE);
+        String email = sharedPreferences.getString("email",null);
+
+        if (email != null) {
+            Intent intent = new Intent(Inicio.this, Agenda.class);
+            startActivity(intent);
+        }
         buttonFace.setOnClickListener(v -> {
             String url = "https://https://www.facebook.com";
             Intent intent = new Intent(Intent.ACTION_VIEW);

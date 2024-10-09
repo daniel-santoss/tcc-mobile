@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 
 public class Agenda extends AppCompatActivity {
 
@@ -19,18 +19,28 @@ public class Agenda extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agenda);
 
+        Button button = findViewById(R.id.btnLogoff);
 
-        Button voltar_login = findViewById(R.id.voltarAgenda);
-        SharedPreferences sharedPreferences = getSharedPreferences("dados", Context.MODE_PRIVATE);
+        button.setOnClickListener((v ) -> {
+            SharedPreferences sharedPreferences = getSharedPreferences("dados", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.remove("email");
+            editor.apply();
+            Intent intent = new Intent(Agenda.this, Inicio.class);
+            startActivity (intent);
+
+        });
+
+       /* SharedPreferences sharedPreferences = getSharedPreferences("dados", Context.MODE_PRIVATE);
         String email = sharedPreferences.getString("email","email não identificado");
         System.out.println(email);
         voltar_login.setOnClickListener(new View.OnClickListener() {
-            @Override
+          @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Agenda.this, Inicio.class);
                 startActivity (intent);
             }
-        });
+        });  */
     }
 
   /*  private void carregarAgendamentos(Long usuarioId) {
@@ -60,4 +70,5 @@ public class Agenda extends AppCompatActivity {
             }
         });
     } }*/
+
 }
