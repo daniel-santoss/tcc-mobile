@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<Usuario> call, Throwable t) {
                             System.out.println(t);
-                            Toast toast =  Toast.makeText(getApplicationContext(),"Usuario não encontrado", Toast.LENGTH_LONG);
+                            Toast toast =  Toast.makeText(getApplicationContext(),"Usuário ou senha inválidos", Toast.LENGTH_LONG);
                             toast.show();
                         }
                     });
